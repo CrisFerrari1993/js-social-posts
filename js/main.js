@@ -130,11 +130,12 @@ let likeButtons = document.querySelectorAll('.like-button');
 console.log(likeButtons);
 let likeArray = [];
 
-likeButtons.forEach(Element => {
+likeButtons.forEach((Element) => {
     //dichiaro un contaotre che sarà ugaule al id elemento
     let contatore = Element.getAttribute('data-postid');
     // creo il conteggio che corrisponde all'id
     let questoContatore = document.getElementById(`like-counter-${contatore}`);
+    //oggetto con proprietà id da aggiungere al like array ogni volta che si clicca su like
     let newObj = {id:contatore};
 
     //click sul like
@@ -144,7 +145,7 @@ likeButtons.forEach(Element => {
             e.preventDefault();
             //se fosse gia stato cliccato...
             if(Element.classList.contains('like-button--liked')) {
-                Element.classList.remove('like-button..liked')
+                Element.classList.remove('like-button--liked')
                 //rimuovo il like al contatore
                 questoContatore.innerHTML = parseInt(questoContatore.innerHTML) - 1;
                 //tolgo id dal array
