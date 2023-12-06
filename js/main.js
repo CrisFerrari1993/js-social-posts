@@ -88,7 +88,8 @@ let container = document.getElementById('container');
 posts.forEach(Element => {
    
     let {id, content, media, likes, created} = Element;
-    let {author} = Element ;
+    let {author} = Element ;//da mettere sopra con gli altri
+
 // Assegno alla variabile myPost, i valori ottenuti dal deconstruct
     let myPost = `
         <div class="post">
@@ -149,8 +150,7 @@ likeButtons.forEach((Element) => {
                 //rimuovo il like al contatore
                 questoContatore.innerHTML = parseInt(questoContatore.innerHTML) - 1;
                 //tolgo id dal array
-                likeArray = likeArray.filter(
-                    function(object) {
+                likeArray = likeArray.filter((object) => {
                         return object.id !== contatore;
                     }
                 );
